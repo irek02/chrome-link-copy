@@ -1,0 +1,19 @@
+{
+  "extends": ["eslint:recommended", "google"],
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "globals": {
+    "chrome": true,
+    "LinkToClipboard": true
+  },
+  "rules": {
+    "no-var": 0,
+    "eol-last": 0,
+    "quotes": [
+      2,
+      "single"
+    ]
+  }
+}

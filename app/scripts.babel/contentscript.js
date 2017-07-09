@@ -1,68 +1,72 @@
 'use strict';
 
-var link_url = null;
+var ltc = new LinkToClipboard(window);
+ltc.init();
 
-window.onmouseover = function(e) {
-	if (isElementALinkWithUrl(e)) {
-		link_url = e.target.href;
-	}
-};
 
-document.onkeydown = function(e) {
+// var link_url = null;
 
-	if (!isCmdCPressed(e)) {
-		return;
-	} 
+// window.onmouseover = function(e) {
+//  if (isElementALinkWithUrl(e)) {
+//    link_url = e.target.href;
+//  }
+// };
 
-	if (!link_url) {
-		return;
-	}
+// window.onkeydown = function(e) {
 
-	var tmp_input_field = createTmpInputField();
+//  if (!isCmdCPressed(e)) {
+//    return;
+//  }
 
-	tmp_input_field.value = link_url;
+//  if (!link_url) {
+//    return;
+//  }
 
-	tmp_input_field.select();
+//  var tmp_input_field = createTmpInputField();
 
-	document.execCommand('copy');
+//  tmp_input_field.value = link_url;
 
-	document.body.removeChild(tmp_input_field);
-}
+//  tmp_input_field.select();
 
-function createTmpInputField() {
+//  document.execCommand('copy');
 
-	var dummy = document.createElement('input');
+//  document.body.removeChild(tmp_input_field);
+// }
 
-	document.body.appendChild(dummy);
+// function createTmpInputField() {
 
-	dummy.setAttribute('id', 'dummy_id');
+//  var dummy = document.createElement('input');
 
-	dummy.style.visibility = 'none';
+//  document.body.appendChild(dummy);
 
-	return dummy;
+//  dummy.setAttribute('id', 'dummy_id');
 
-}
+//  dummy.style.visibility = 'none';
 
-function isElementALinkWithUrl(event) {
+//  return dummy;
 
-	if (!event.target) {
-		return;
-	}
+// }
 
-	if (event.target.href) {
-		return true;
-	}
-}
+// function isElementALinkWithUrl(event) {
 
-function isCmdCPressed(event) {
+//  if (!event.target) {
+//    return;
+//  }
 
-	if (!event.metaKey) {
-		return;
-	} 
+//  if (event.target.href) {
+//    return true;
+//  }
+// }
 
-	if (event.keyCode !== 67) {
-		return;
-	}
+// function isCmdCPressed(event) {
 
-	return true;
-}
+//  if (!event.metaKey) {
+//    return;
+//  }
+
+//  if (event.keyCode !== 67) {
+//    return;
+//  }
+
+//  return true;
+// }

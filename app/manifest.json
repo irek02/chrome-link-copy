@@ -27,6 +27,7 @@
         "https://*/*"
       ],
       "js": [
+        "scripts/LinkToClipboard.js",
         "scripts/contentscript.js"
       ],
       "run_at": "document_end",
